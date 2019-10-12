@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}接口--{{ api.apiname }}--测试结果{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- 接口列表-->
+    <div class="row" style="padding-left: 20px; width:100%;">
+        <div class="col-md-11">
+            <table class="table table-striped" rules="">
+                <thead>
+                <tr>
+                    <th>接口名称</th>
+                    <th>接口描述</th>
+                    <th>接口地址</th>
+                    <th>请求头</th>
+                    <th>请求参数</th>
+                    <th>请求方法</th>
+                    <th>预期结果</th>
+                    <th>实际结果</th>
+                    <th>是否通过</th>
+                    <th>执行时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #eee">
+                        <td>{{ api.apiname }}</td>
+                        <td>{{ api.apidesc }}</td>
+                        <td>{{ api.apiurl }}</td>
+                        <td>{{ api.apiheader }}</td>
+                        <td>{{ api.apiparamvalue }}</td>
+                        <td>{{ api.apimethod }}</td>
+                        <td>{{ api.apiresult }}</td>
+                        <td>{{ api.apiresponse }}</td>
+                        <td>{% if api.apistatus == 1 %}
+                            <a style='color:green'>{{ api.apistatus }}</a>
+                        {% else %}
+                            <a style='color:red'>{{ api.apistatus }}</a>
+                        {% endif %}
+                        </td>
+                        <td>{{ api.create_time }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

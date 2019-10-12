@@ -1,0 +1,19 @@
+如何启动：
+1、先启动redis服务器
+2、启动worker  python manage.py celery worker - l info
+3、启动分配机制 beat celery -A project beat -l info
+
+如何配置：
+    1、首先在project 下创建celery.py  其中配置好app
+    eg: os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_test.settings')
+    django.setup()	# 注册到django
+
+    # 创建celery任务
+    app = Celery('web_test')
+    platforms.C_FORCE_ROOT = True
+    # 导入celery任务配置
+    app.config_from_object('django.conf:settings')
+    # 自动注册 celery任务
+    app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+    2、在app下建立tasks.注意：必须命名为tasks,要不然无法启动
+    3、第一次启动时，时间存在问题。需要配置utc

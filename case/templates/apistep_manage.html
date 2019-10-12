@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}接口场景测试{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- 测试步骤管理列表-->
+    <div class="row" style="padding-top: 0px; width: 100%">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+
+                <tr>
+                    <th>所属场景</th>
+                    <th>步聚</th>
+                    <th>URL地址</th>
+                    <th>参数值</th>
+                    <th>方法</th>
+                    <th>校验</th>
+                    <th>结果</th>
+                    <th>时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for apistep in apisteps %}
+                    <tr>
+                        {% if apistep.Apitest.id == apitest.id %}
+                            <td>case_{{ apistep.Apitest.id }}_{{ apistep.Apitest.apitestname }}</td>
+                            <td>{{ apistep.apistep }}:{{ apistep.apiname }}</td>
+                            <td>{{ apistep.apiurl }}</td>
+                            <td>{{ apistep.apiparamvalue }}</td>
+                            <td>{{ apistep.apimethod }}</td>
+                            <td>{{ apistep.apiresult }}</td>
+                            <td>{% if apistep.apistatus == 1 %}
+                                <a style='color:green'>{{ apistep.apistatus }}</a>
+                            {% else %}
+                                <a style='color:red'>{{ apistep.apistatus }}</a>
+                            {% endif %}
+                            </td>
+                            <td>{{ apistep.create_time }}</td>
+                        {% else %}
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container" align="center">
+        <a style='color:lightblue; ' href="../scence_api/">
+            <img src="/static/admin/img/icon-yes.svg" alt="返回"/>返回
+        </a>
+
+        <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="edit_id_Apitest"
+           href="../admin/case/apitest/{{ apitest.id }}/change/">
+            <img src="/static/admin/img/icon-changelink.svg"/>编辑</a>
+
+    </div>
+{% endblock %}

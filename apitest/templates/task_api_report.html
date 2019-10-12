@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}BUG的一生{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="padding-top: 55px;padding-left: 20px; width:100%;">
+        <div class="col-md-11">
+            <table class="table table-striped" ; rules="">
+                <div style="position:absolute; right:10px; width:10px; ">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>单一接口扫描-自动化测试汇总报告</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>用例总数</th>
+                        <td>{{ apiscounts }}</td>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>通过
+                        </th>
+                        <td>{{ apis_pass_counts }}</td>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th
+                        ></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>不通过</th>
+                        <td><a style='color:red'>{{ apis_fail_counts }}</a>
+                        </td>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </div>
+            </table>
+            <!-- 单一接口测试用例-->
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>接口列表</th>
+                    <td>
+                <tr>
+                    <th>ID</th>
+                    <th>测试用例名称</th>
+                    <th>URL地址</th>
+                    <th>参数值</th>
+                    <th>方法</th>
+                    <th>预期</th>
+                    <th>实际结果</th>
+                    <th>测试结果</th>
+                    <th>执行时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for api in apis %}
+                    <tr>
+
+                        <td>{{ api.id }}</td>
+                        <td>{{ api.apiname }}</td>
+                        <td>{{ api.apiurl }}</td>
+                        <td>{{ api.apiparamvalue }}</td>
+                        <td>{{ api.apimethod }}</td>
+                        <td>{{ api.apiresult }}</td>
+                        <td>{{ api.apiresponse }}</td>
+                        <td>{% if api.apistatus == 1 %}
+                            <a style='color:green'>{{ api.apistatus }}</a>
+                        {% else %}
+                            <a style='color:red'>{{ api.apistatus }}</a>
+                        {% endif %}
+                        </td>
+                        <td>{{ api.create_time }}</td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

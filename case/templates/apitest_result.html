@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}场景--{{ api.apitestname }}--测试结果{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+{% csrf_token %}
+
+{% block content %}
+
+    <!-- 接口列表-->
+    <div class="row" style="padding-left: 20px; width:100%;">
+        <div class="col-md-11">
+            <table class="table table-striped" rules="">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>场景名称</th>
+                    <th>场景描述</th>
+                    <th>测试步骤</th>
+                    <th>测试结果</th>
+                    <th>原因</th>
+                    <th>所属产品</th>
+                    <th>更新时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style="background-color: #eee">
+                    <td>{{ api.id }}</td>
+                    <td>{{ api.apitestname }}</td>
+                    <td>{{ api.apitestdesc }}</td>
+                    <td valign="top" style="word-wrap:break-word;word-break:break-all;" width="500px">
+                           {% for step in steps %}
+                               {% if step.Apitest_id == api.id %}
+
+                                <br>{{ step.apistep }}&nbsp;&nbsp;调用接口：{{ step.apiurl }}&nbsp;&nbsp;请求方法：
+                                {{ step.apimethod }}&nbsp;&nbsp;请求参数: {{ step.apiparamvalue }}
+                               {% endif %}
+                            {% endfor %}
+                        </td>
+                    <td>{% if api.apitestresult == 1 %}
+                        <a style='color:green'>{{ api.apitestresult }}</a>
+                    {% else %}
+                        <a style='color:red'>{{ api.apitestresult }}</a>
+                    {% endif %}
+                    </td>
+                    <td>{{ api.failreason }}</td>
+                    <td>{{ api.Items.name }}</td>
+                    <td>{{ api.update_time }}</td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

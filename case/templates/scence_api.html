@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}接口场景测试{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- 流程接口列表-->
+    <div class="row" style="padding-top: 20px; width:100%;">
+        <div class="col-md-12">
+        {% if apitestcounts == 0 %}
+            <div class="container">
+                <div class="container">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p class="text-center text-info lead">
+                    <em>Sorry!</em> 当前无场景测试用例， <strong><a href="../admin/case/apitest/add/">前往添加</a></strong>
+					</p>
+                </div>
+        {% else %}
+            <table class="table table-striped">
+                <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>产品</th>
+                    <th>用例名称</th>
+                    <th>接口场景描述</th>
+                    <th>负责人</th>
+                    <th>立即</th>
+                    <th>查看</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for apitest in apitests %}
+                    <tr>
+                        <td>{{ apitest.id }}</td>
+                        <td>{{ apitest.Items_id }}</td>
+                        <td>{{ apitest.apitestname }}</td>
+                        <td>{{ apitest.apitestdesc }}</td>
+                        <td>{{ apitest.apitester }}</td>
+                        <td>
+                            <a href="{% url "do_apitest" %}?apitest.id={{ apitest.id }}" target="mainFrame">运行</a>
+                        </td>
+                        <td><a href="{% url "apistep_manage" %}?apitest.id={{ apitest.id }} "><img
+                                src="/static/admin/img/icon-yes.svg"/></a></td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                               id="add_id_Apitest"
+                               href="../admin/case/apitest/{{ apitest.id }}/change/"><img
+                                src="/static/admin/img/icon-changelink.svg"/></a></td>
+                        <td><a style='color:lightblue' class="related-widget-wrapper-link add-related"
+                               id="add_id_Apitest"
+                               href="../admin/case/apitest/{{ apitest.id }}/delete/"><img
+                                src="/static/admin/img/icon-deletelink.svg"/></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        </div>
+    </div>
+    <!--统计和翻页功能-->
+    <span style="position:absolute; left:750px; bottom:20px;">
+    <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ul class="pagination">
+				{# 上一页链接开始#}
+                {% if apitests.has_previous %}
+                    {#  如果有上一页则正常显示上一页链接#}
+                    <li class="previous"><a href="/scence_api/?page={{ apitests.previous_page_number }}">上一页</a></li>
+                    {#  上一页标签 #}
+                {% else %}
+                    <li class="previous disabled"><a href="#">上一页</a></li> {# 如果当前不存在上一页则上一页的链接不可点击#}
+                {% endif %}
+                {# 上一页链接开始#}
+
+                {% for num in apitests.paginator.page_range %}
+
+                    {% if num == currentPage %}
+                        <li class="item active"><a href="/scence_api/?page={{ num }}">{{ num }}</a></li> {#显示当页数链接#}
+                    {% else %}
+                        <li class="item"><a href="/scence_api/?page={{ num }}">{{ num }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {# 下一页链接开始#}
+                {% if apitests.has_next %} {#  如果有下一页则正常显示下一页链接#}
+                    <li class="next"><a href="/scence_api/?page={{ apitests.next_page_number }}">下一页</a></li>
+                {% else %}
+                    <li class="next disabled"><a href="#">下一页</a></li>
+                {% endif %}
+                {# 下一页链接结束#}
+			</ul>
+		</div>
+	</div>
+</div>
+    </span>
+{% endblock %}

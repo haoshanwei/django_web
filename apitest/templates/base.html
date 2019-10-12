@@ -1,0 +1,76 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>{% block title %}base{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% block css %}{% endblock %}
+</head>
+<body>
+{% csrf_token %}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-nav"
+                    aria-expanded="false">
+                <span class="sr-only">切换导航条</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="color:#421256; font-size:28px; margin-left: 0px">龖藏接口自动化测试系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="my-nav">
+            <ul class="nav navbar-nav navbar-left" style="margin-left: 100px">
+                <li><a href="../item/" style="color:#2e5612; font-size:18px;">项目管理</a></li>
+                <li>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="color:#2e5612; font-size:18px;">测试管理<strong class="caret"></strong></a>
+                    <ul class="dropdown-menu" style="border: 0">
+                        <li><a href="#" style="color:#2e5612; font-size:14px;">功能测试</a></li>
+                        <li><a href="../api/" style="color:#2e5612; font-size:14px;">接口测试</a></li>
+                        <li><a href="../scence_api/" style="color:#2e5612; font-size:14px;">场景测试</a></li>
+                        <li><a href="#" style="color:#2e5612; font-size:14px;">性能测试</a></li>
+                    </ul>
+                </li>
+                <li><a href="../bug/" style="color:#2e5612; font-size:18px;">缺陷管理</a></li>
+                <li><a href="../periodic_task/" style="color:#2e5612; font-size:18px;">定时任务</a></li>
+                <form class="navbar-form navbar-left" role="search" action="/search/">
+						<div class="form-group">
+							<input type="text" class="form-control"  name="search" placeholder="输入搜索内容..."/>
+						</div> <button type="submit" class="btn btn-default">搜索</button>
+					</form>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../admin/" style="color:#2e5612; font-size:15px;">后台</a></li>
+                <li><a href="../logout/" style="color:#2e5612; font-size:15px;">退出</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+{% block content %}{% endblock %}
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>
