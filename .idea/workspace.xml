@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a331d6f1-657c-43ce-a560-cb80c36597cb" name="Default Changelist" comment="" />
+    <list default="true" id="a331d6f1-657c-43ce-a560-cb80c36597cb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/030cae72-eab0-4078-9e07-cbe531299ac4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/030cae72-eab0-4078-9e07-cbe531299ac4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apitest/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/apitest/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apitest/templates/periodic_task.html" beforeDir="false" afterPath="$PROJECT_DIR$/apitest/templates/periodic_task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apitest/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apitest/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apitest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apitest/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/templates/bug.html" beforeDir="false" afterPath="$PROJECT_DIR$/bug/templates/bug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/templates/apitest_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/case/templates/apitest_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_test/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web_test/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_test/urls.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +28,9 @@
     <SUITE FILE_PATH="coverage/web_test$tests.coverage" NAME="tests Coverage Results" MODIFIED="1570693619916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
     <SUITE FILE_PATH="coverage/web_test$Rcelery.coverage" NAME="Rcelery Coverage Results" MODIFIED="1570526362642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
     <SUITE FILE_PATH="coverage/web_test$apitasks.coverage" NAME="apitasks Coverage Results" MODIFIED="1570774021842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
+    <SUITE FILE_PATH="coverage/AutoTestWeb$tests.coverage" NAME="tests Coverage Results" MODIFIED="1570852881388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
     <SUITE FILE_PATH="coverage/web_test$mysql.coverage" NAME="mysql Coverage Results" MODIFIED="1570691824577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
-    <SUITE FILE_PATH="coverage/AutoTestWeb$tasks.coverage" NAME="tasks Coverage Results" MODIFIED="1570849919551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
+    <SUITE FILE_PATH="coverage/AutoTestWeb$tasks.coverage" NAME="tasks Coverage Results" MODIFIED="1570862955212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/apitest" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -50,6 +64,13 @@
         <item name="web@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="web: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="bug_bug: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="web@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="web: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="case_singeapi: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -76,33 +97,34 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="6" />
-          <entry key="html" value="113" />
+          <entry key="html" value="116" />
           <entry key="js" value="4" />
-          <entry key="py" value="261" />
+          <entry key="pid" value="1" />
+          <entry key="py" value="270" />
           <entry key="rnc" value="2" />
-          <entry key="sql" value="6" />
+          <entry key="sql" value="7" />
           <entry key="异步任务启动" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="6" />
-          <entry key="HTML" value="113" />
+          <entry key="HTML" value="116" />
           <entry key="JavaScript" value="4" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="261" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="270" />
           <entry key="RNG Compact" value="2" />
-          <entry key="Scratch" value="6" />
+          <entry key="Scratch" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="2" />
           <entry key="dummy" value="6" />
-          <entry key="html" value="3521" />
+          <entry key="html" value="3623" />
           <entry key="js" value="2" />
-          <entry key="py" value="11784" />
-          <entry key="sql" value="103" />
+          <entry key="py" value="12402" />
+          <entry key="sql" value="135" />
           <entry key="txt" value="3" />
           <entry key="异步任务启动" value="311" />
         </counts>
@@ -110,12 +132,12 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="3521" />
+          <entry key="HTML" value="3623" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="320" />
-          <entry key="Python" value="11774" />
+          <entry key="Python" value="12392" />
           <entry key="SQL" value="10" />
-          <entry key="Scratch" value="103" />
+          <entry key="Scratch" value="135" />
         </counts>
       </usages-collector>
     </session>
@@ -123,54 +145,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/templates/api.html">
+        <entry file="file://$PROJECT_DIR$/web_test/celery.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="22" column="22" selection-start-line="13" selection-start-column="16" selection-end-line="22" selection-end-column="22" />
-              <folding>
-                <element signature="e#407#413#1#HTML" expanded="true" />
-                <element signature="e#437#443#1#HTML" expanded="true" />
-                <element signature="e#467#473#1#HTML" expanded="true" />
-                <element signature="e#497#503#1#HTML" expanded="true" />
-                <element signature="e#527#533#1#HTML" expanded="true" />
-                <element signature="e#325#2366#0#HTML" />
-                <element signature="e#2416#3812#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/templates/api_result.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/templates/apistep_manage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/templates/scence_api.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
-              <folding>
-                <element signature="e#448#454#1#HTML" expanded="true" />
-                <element signature="e#478#484#1#HTML" expanded="true" />
-                <element signature="e#508#514#1#HTML" expanded="true" />
-                <element signature="e#538#544#1#HTML" expanded="true" />
-                <element signature="e#568#574#1#HTML" expanded="true" />
-                <element signature="e#329#2244#0#HTML" />
-              </folding>
+            <state relative-caret-position="391">
+              <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -178,49 +156,48 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apitest/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="307" column="37" lean-forward="true" selection-start-line="307" selection-start-column="37" selection-end-line="307" selection-end-column="37" />
+            <state relative-caret-position="178">
+              <caret line="312" column="75" selection-start-line="312" selection-start-column="75" selection-end-line="312" selection-end-column="75" />
               <folding>
-                <marker date="1570850511512" expanded="true" signature="4944:4945" ph="..." />
-                <marker date="1570850511512" expanded="true" signature="6255:6683" ph="..." />
-                <marker date="1570850511512" expanded="true" signature="17535:17635" ph="..." />
+                <element signature="e#6257#6680#0" />
+                <element signature="e#8130#8792#0" />
+                <marker date="1570864741820" expanded="true" signature="4944:4945" ph="..." />
+                <marker date="1570864741820" expanded="false" signature="6207:6635" ph="..." />
+                <marker date="1570864741820" expanded="true" signature="17638:17738" ph="..." />
+                <marker date="1570864741820" expanded="true" signature="18529:18531" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/items/templates/item.html">
+        <entry file="file://$PROJECT_DIR$/case/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="403">
+              <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
               <folding>
-                <element signature="e#336#1466#0#HTML" />
+                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1570860697973" expanded="true" signature="732:733" ph="..." />
+                <marker date="1570860697973" expanded="true" signature="3272:3331" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/items/views.py">
+        <entry file="file://$PROJECT_DIR$/apitest/templates/periodic_task.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="36" column="76" lean-forward="true" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_test/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="14" column="106" selection-start-line="14" selection-start-column="106" selection-end-line="14" selection-end-column="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bug/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <marker date="1570849522272" expanded="true" signature="254:255" ph="..." />
-                <marker date="1570849522272" expanded="true" signature="254:256" ph="..." />
-                <marker date="1570849522272" expanded="true" signature="836:839" ph="..." />
-              </folding>
+              <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -228,14 +205,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apitest/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="155" column="15" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
+            <state relative-caret-position="142">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-                <marker date="1570849969543" expanded="true" signature="1522:2381" ph="..." />
-                <marker date="1570849969543" expanded="true" signature="2476:2477" ph="..." />
-                <marker date="1570849969543" expanded="true" signature="2476:2478" ph="..." />
-                <marker date="1570849969543" expanded="true" signature="3260:3262" ph="..." />
+                <marker date="1570863978351" expanded="true" signature="1526:2389" ph="..." />
+                <marker date="1570863978351" expanded="true" signature="2484:2485" ph="..." />
+                <marker date="1570863978351" expanded="true" signature="2484:2486" ph="..." />
+                <marker date="1570863978351" expanded="true" signature="3268:3270" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/case/templates/apitest_result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="35" column="91" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="91" />
+              <folding>
+                <element signature="e#1031#1081#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web_test/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#632#664#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -244,8 +245,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bug/templates/bug.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="450">
+              <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/case/templates/api.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="54" column="56" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -280,10 +290,10 @@
       <find>gohome</find>
       <find>h</find>
       <find>compare_result</find>
-      <find>print</find>
       <find>tasks</find>
       <find>periodic_task</find>
       <find>def test_single_api(caseId):</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>product</replace>
@@ -323,7 +333,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apitest/Rcelery.py" />
         <option value="C:/Program Files/Python36/Lib/site-packages/djcelery/management/commands/celery.py" />
         <option value="$PROJECT_DIR$/case/tests.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/030cae72-eab0-4078-9e07-cbe531299ac4/console_3.sql" />
@@ -339,16 +348,12 @@
         <option value="$PROJECT_DIR$/case/templates/scence-api.html" />
         <option value="$PROJECT_DIR$/case/admin.py" />
         <option value="$PROJECT_DIR$/apitest/mysql.py" />
-        <option value="$PROJECT_DIR$/apitest/tests.py" />
-        <option value="$PROJECT_DIR$/apitest/templates/periodic_task.html" />
         <option value="$PROJECT_DIR$/apitest/templates/scence_report.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/030cae72-eab0-4078-9e07-cbe531299ac4/console_5.sql" />
         <option value="$PROJECT_DIR$/apitest/templates/task_scence_report.html" />
         <option value="$PROJECT_DIR$/apitest/templates/task_api_report.html" />
         <option value="$PROJECT_DIR$/case/templates/apistep_manage.html" />
-        <option value="$PROJECT_DIR$/case/templates/apitest_result.html" />
         <option value="$PROJECT_DIR$/case/templates/api_result.html" />
-        <option value="$PROJECT_DIR$/bug/templates/bug.html" />
         <option value="C:/Program Files/Python36/Lib/site-packages/django/contrib/admin/sites.py" />
         <option value="$PROJECT_DIR$/bug/models.py" />
         <option value="$PROJECT_DIR$/bug/admin.py" />
@@ -359,19 +364,24 @@
         <option value="$PROJECT_DIR$/apitest/apitasks.py" />
         <option value="$PROJECT_DIR$/apitest/__init__.py" />
         <option value="$PROJECT_DIR$/apitest/celery.py" />
-        <option value="$PROJECT_DIR$/web_test/settings.py" />
         <option value="C:/Program Files/Python36/Lib/site-packages/djcelery/schedulers.py" />
         <option value="C:/Program Files/Python36/Lib/site-packages/celery/beat.py" />
-        <option value="$PROJECT_DIR$/case/models.py" />
         <option value="$PROJECT_DIR$/web_test/celery.py" />
         <option value="C:/Program Files/Python36/Lib/site-packages/django/contrib/admin/templates/admin/base.html" />
-        <option value="$PROJECT_DIR$/web_test/urls.py" />
         <option value="$PROJECT_DIR$/异步任务启动" />
-        <option value="$PROJECT_DIR$/case/views.py" />
         <option value="$PROJECT_DIR$/case/templates/api.html" />
         <option value="$PROJECT_DIR$/case/templates/scence_api.html" />
         <option value="$PROJECT_DIR$/items/templates/item.html" />
         <option value="$PROJECT_DIR$/bug/views.py" />
+        <option value="$PROJECT_DIR$/apitest/tests.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/030cae72-eab0-4078-9e07-cbe531299ac4/console_6.sql" />
+        <option value="$PROJECT_DIR$/bug/templates/bug.html" />
+        <option value="$PROJECT_DIR$/web_test/urls.py" />
+        <option value="$PROJECT_DIR$/case/views.py" />
+        <option value="$PROJECT_DIR$/case/models.py" />
+        <option value="$PROJECT_DIR$/apitest/templates/periodic_task.html" />
+        <option value="$PROJECT_DIR$/web_test/settings.py" />
+        <option value="$PROJECT_DIR$/case/templates/apitest_result.html" />
         <option value="$PROJECT_DIR$/apitest/views.py" />
         <option value="$PROJECT_DIR$/apitest/tasks.py" />
       </list>
@@ -482,7 +492,7 @@
             <path>
               <item name="AutoTestWeb" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="apitest" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web_test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -838,9 +848,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.tasks" />
+        <item itemvalue="Python.tests" />
         <item itemvalue="Python tests.pytest in tasks.py" />
         <item itemvalue="Python.apitasks" />
-        <item itemvalue="Python.tests" />
         <item itemvalue="Python.mysql" />
       </list>
     </recent_temporary>
@@ -879,11 +889,11 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18230277" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="0" weight="0.32899022" />
       <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.4989339" visible="true" weight="0.330076" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5010661" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Python Console" order="4" weight="0.329718" />
+      <window_info anchor="bottom" id="Python Console" order="4" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.329718" />
@@ -892,8 +902,8 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.329718" />
-      <window_info anchor="right" id="Database" order="0" weight="0.15245202" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32899022" />
+      <window_info anchor="right" id="Database" order="0" visible="true" weight="0.15245202" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="SciView" order="2" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
@@ -930,56 +940,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/apitest/templates/periodic_task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/030cae72-eab0-4078-9e07-cbe531299ac4/console_5.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apitest/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="842">
-          <caret line="55" column="81" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apitest/templates/task_api_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="103" column="54" lean-forward="true" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apitest/templates/task_scence_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="79" column="33" lean-forward="true" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-          <folding>
-            <element signature="n#if#1;n#!!top" />
-            <element signature="e#3520#3539#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/case/templates/apitest_result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="56" lean-forward="true" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
-          <folding>
-            <element signature="e#1006#1056#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1052,16 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bug/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1142,13 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_test/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="136" column="24" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python36/Lib/site-packages/celery/app/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
@@ -1179,25 +1122,6 @@
     <entry file="file://$PROJECT_DIR$/items/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/case/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="55" column="45" lean-forward="true" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1570844559573" expanded="true" signature="732:733" ph="..." />
-            <marker date="1570844559573" expanded="true" signature="3271:3329" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web_test/celery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="16" selection-start-line="16" selection-end-line="25" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Program Files/Python36/Lib/site-packages/django/contrib/admin/templates/admin/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -1205,31 +1129,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web_test/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#632#664#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/异步任务启动">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="24" column="97" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <marker date="1570848273645" expanded="true" signature="987:988" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,22 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/templates/api.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="22" column="22" selection-start-line="13" selection-start-column="16" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#407#413#1#HTML" expanded="true" />
-            <element signature="e#437#443#1#HTML" expanded="true" />
-            <element signature="e#467#473#1#HTML" expanded="true" />
-            <element signature="e#497#503#1#HTML" expanded="true" />
-            <element signature="e#527#533#1#HTML" expanded="true" />
-            <element signature="e#325#2366#0#HTML" />
-            <element signature="e#2416#3812#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,16 +1182,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bug/templates/bug.html">
+    <entry file="file://$PROJECT_DIR$/bug/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="9" column="60" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bug/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
+        <state relative-caret-position="575">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -1315,28 +1205,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files/Python36/Lib/site-packages/django/core/handlers/exception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apitest/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/030cae72-eab0-4078-9e07-cbe531299ac4/console_6.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/templates/api.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="54" column="56" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_test/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#632#664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bug/templates/bug.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" column="57" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/migrations/0002_auto_20191012_1404.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/celerybeat.pid">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1570860697973" expanded="true" signature="732:733" ph="..." />
+            <marker date="1570860697973" expanded="true" signature="3272:3331" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apitest/templates/periodic_task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" column="76" lean-forward="true" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_test/celery.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="20" lean-forward="true" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web_test/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1570860179321" expanded="true" signature="988:989" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/templates/apitest_result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="35" column="91" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="91" />
+          <folding>
+            <element signature="e#1031#1081#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apitest/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="155" column="15" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
+        <state relative-caret-position="142">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1570849969543" expanded="true" signature="1522:2381" ph="..." />
-            <marker date="1570849969543" expanded="true" signature="2476:2477" ph="..." />
-            <marker date="1570849969543" expanded="true" signature="2476:2478" ph="..." />
-            <marker date="1570849969543" expanded="true" signature="3260:3262" ph="..." />
+            <marker date="1570863978351" expanded="true" signature="1526:2389" ph="..." />
+            <marker date="1570863978351" expanded="true" signature="2484:2485" ph="..." />
+            <marker date="1570863978351" expanded="true" signature="2484:2486" ph="..." />
+            <marker date="1570863978351" expanded="true" signature="3268:3270" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apitest/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="307" column="37" lean-forward="true" selection-start-line="307" selection-start-column="37" selection-end-line="307" selection-end-column="37" />
+        <state relative-caret-position="178">
+          <caret line="312" column="75" selection-start-line="312" selection-start-column="75" selection-end-line="312" selection-end-column="75" />
           <folding>
-            <marker date="1570850511512" expanded="true" signature="4944:4945" ph="..." />
-            <marker date="1570850511512" expanded="true" signature="6255:6683" ph="..." />
-            <marker date="1570850511512" expanded="true" signature="17535:17635" ph="..." />
+            <element signature="e#6257#6680#0" />
+            <element signature="e#8130#8792#0" />
+            <marker date="1570864741820" expanded="true" signature="4944:4945" ph="..." />
+            <marker date="1570864741820" expanded="false" signature="6207:6635" ph="..." />
+            <marker date="1570864741820" expanded="true" signature="17638:17738" ph="..." />
+            <marker date="1570864741820" expanded="true" signature="18529:18531" ph="..." />
           </folding>
         </state>
       </provider>

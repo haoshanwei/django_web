@@ -23,6 +23,7 @@
                         <th>创建人</th>
                         <th>分配给</th>
                         <th>创建时间</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -35,8 +36,8 @@
                             <td>{{ bug.buglevel }}</td>
                             <td>{{ bug.ItemsApplication.Items.name }}|{{ bug.ItemsApplication.name }}</td>
                             <td>{{ bug.bugcreater }}</td>
-                            <td>{{ bug.createtime }}</td>
                             <td>{{ bug.bugrepair }}</td>
+                            <td>{{ bug.createtime }}</td>
                         </tr>
                     {% endfor %}
                     </tbody>

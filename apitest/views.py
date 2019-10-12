@@ -19,7 +19,7 @@ def task_apis(request):
 	username = request.session.get('user', '')
 	apis_list = SingeApi.objects.all()
 	apis_count = SingeApi.objects.all().count()  # 统计接口数
-	db = pymysql.connect(user='root', db='web', passwd='root', host='127.0.0.1')
+	db = pymysql.connect(user='root', db='web', passwd='root', host='192.168.10.37')
 	cursor = db.cursor()
 	rightsql = 'SELECT count(id) FROM case_singeapi WHERE apistatus=TRUE'
 	rightresult = cursor.execute(rightsql)
@@ -38,7 +38,7 @@ def task_apisteps(request):
 	username = request.session.get('user', '')
 	apis_list = Apitest.objects.all()
 	apis_count = Apitest.objects.all().count()  # 统计接口数
-	db = pymysql.connect(user='root', db='web', passwd='root', host='127.0.0.1')
+	db = pymysql.connect(user='root', db='web', passwd='root', host='192.168.10.37')
 	cursor = db.cursor()
 	rightsql = 'SELECT count(id) FROM case_apitest WHERE apitestresult=TRUE'
 	rightresult = cursor.execute(rightsql)
@@ -161,3 +161,5 @@ def do_apitest(request):
 def colse_bug(request):
 	username = request.session.get('user', '')
 	bugId = request.GET.get('bug.id', None)
+	close_bug(bugId)
+	return HttpResponse('关闭当前bug')

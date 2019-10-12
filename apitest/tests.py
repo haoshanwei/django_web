@@ -1,15 +1,15 @@
 from django.test import TestCase
 
 # Create your tests here.
-results = [(1, '登录', 'www.baidu.com', 'get', '1', '/', '/', '200', 1, 1), (2, '登录2', 'www.baidu.com1', 'get', '1', '/', '/', '200', None, 2), (3, '退出', 'www.baidu.com2', 'get', '/', '/', '/', '200', None, 2)]
-
-dict_list = []
-for i in range(1, len(results)):
-	dict_result = {f'场景{results[i-1][-1]}': [results[i-1][0:-1]]}
-	if f'场景{results[i-1][-1]}' == f'场景{results[i][-1]}':
-		dict_result[f'场景{results[i-1][-1]}'].append(results[i-1][0:-1])
-	dict_list.append(dict_result)
+result = """
+{"beginPrice":"0","bidInc":"B_I_11","desc":"尺寸长180mm直径45mm佛家至宝元代天铁+紫利玛铜+黄利玛铜三色九股金刚杵","images":"2D7DF2D1-303F-4504-A37C-F9F92C9A97270.JPG","marketPrice":"P
+_M_06","name":"斯瓦{"beginPrice":"0","bidInc":"B_I_11","desc":"尺寸长180mm直径45mm佛家至宝元代天铁+紫利玛铜+黄利玛铜三色九股金刚杵","images":"2D7DF2D1-303F-4504-A37C-F9F92C9A97270.JP
+G","marketPrice":"P_M_06","name":"斯瓦特","planTime":"P_P_01","type":"P_T_01"}
 
 
-for c in dict_list:
-	print(list(c.values())[0])
+	"""
+
+result.replace('"',"'")
+import json
+
+print(eval(result))

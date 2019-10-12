@@ -49,4 +49,5 @@ urlpatterns = [
     path('do_single/', views.do_single, name='do_single'),
 
 
+
 ]

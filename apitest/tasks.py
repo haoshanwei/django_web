@@ -146,6 +146,7 @@ def caseWriteResult(case_id, result, code, status):
 # 编写bug
 def writeBug(bug_id, api_name, api_url, request, code, response, res_check, ItemAppId):
 	now = time.strftime("%Y-%m-%d %H:%M:%S")
+	names = get_bugList_name()
 	bugname = str(bug_id) + '_' + api_name + '_出错了'
 	bugdetail = '[请求接口]<br />' + api_url + '<br/>' +\
 				'[请求数据]<br />' + str(request) + '<br/>' +\
@@ -156,8 +157,7 @@ def writeBug(bug_id, api_name, api_url, request, code, response, res_check, Item
 		  "bugstatus, ItemsApplication_id, bugrepair)  " \
 		  "VALUES ('%s', '%s', '3', 'admin', '%s', '激活', '%s', 'admin');" % \
 		  (bugname, pymysql.escape_string(bugdetail), pymysql.escape_string(now), ItemAppId)
-	bug_list_name = Mysql().sql_result(f'select bugname from bug_bug')
-	if api_name in bug_list_name:
+	if api_name in names:
 		pass
 	else:
 		Mysql().updata(sql)
@@ -195,7 +195,6 @@ def single_scence_test(Apitest_id):
 	sql = f'SELECT id, apiname, apiurl, apimethod, apiparamvalue, apiheaders, apiresult, apistatuscode, `apistatus`, Apitest_id ' \
 		  f'from case_apistep where Apitest_id={Apitest_id} order by id'
 	apis = Mysql().sql_result(sql)
-	print(apis)
 	DoScneceapi(apis)
 
 # 定时任务-场景测试
@@ -205,10 +204,14 @@ def scence_test():
 		  f'Apitest_id from case_apistep'
 	results = Mysql().sql_result(sql)
 	dict_list = []
-	for i in range(1, len(results)):
-		dict_result = {f'场景{results[i-1][-1]}': [results[i - 1][0:-1]]}
-		if f'场景{results[i-1][-1]}' == f'场景{results[i][-1]}':
-			dict_result[f'场景{results[i-1][-1]}'].append(results[i - 1][0:-1])
+	if len(results) > 1:
+		for i in range(1, len(results)):
+			dict_result = {f'场景{results[i-1][-1]}': [results[i - 1]]}
+			if f'场景{results[i-1][-1]}' == f'场景{results[i][-1]}':
+				dict_result[f'场景{results[i-1][-1]}'].append(results[i - 1])
+			dict_list.append(dict_result)
+	else:
+		dict_result = {f'场景{results[0][-1]}': [results[0]]}
 		dict_list.append(dict_result)
 	for api in dict_list:
 		apisteps = list(api.values())[0]
@@ -222,10 +225,12 @@ def caseWriteResult_scence(reason, status):
 		  f'case_apitest.apitestresult={status}'
 	Mysql().updata(sql)
 
+
 # 写入场景测试中的bug
 def writeScenceBug(apitest_name, api_name, api_url, request, code, response, res_check):
 	now = time.strftime("%Y-%m-%d %H:%M:%S")
 	bugname =  '场景测试:  %s_出错了' % apitest_name
+	names = get_bugList_name()
 	bugdetail = '[场景测试]:' + apitest_name + '\n' +\
 				'[错误接口名称]:' + api_name + '\n' +\
 				'[接口地址]:' + api_url + '\t' +\
@@ -237,7 +242,10 @@ def writeScenceBug(apitest_name, api_name, api_url, request, code, response, res
 		  "bugstatus, bugrepair)  " \
 		  "VALUES ('%s', '%s', '3', 'admin', '%s', '激活', 'admin');" % \
 		  (bugname, pymysql.escape_string(bugdetail), pymysql.escape_string(now))
-	Mysql().updata(sql)
+	if bugname in names:
+		pass
+	else:
+		Mysql().updata(sql)
 
 
 def DoScneceapi(case_list):
@@ -252,7 +260,6 @@ def DoScneceapi(case_list):
 	except:
 		host = None
 		defult_headers = None
-	print(host, defult_headers)
 	for case in case_list:
 		try:
 			case_id = case[0]
@@ -266,7 +273,7 @@ def DoScneceapi(case_list):
 				if case_param is None or case_param == '/':
 					case_param = None
 				else:
-					case_param = json.loads(case_param.replace("'", '"'))
+					case_param = json.loads(case_param.replace("'", '"').replace('”', '"'))
 			except:
 				case_param = None
 			res_check = case[6]
@@ -280,6 +287,7 @@ def DoScneceapi(case_list):
 					case_headers = json.loads(case_headers.replace("'", '"'))
 			except:
 				case_headers = eval(defult_headers)
+
 		except Exception as e:
 			return '测试用例格式不正确，请严格严重要求添加接口测试案例！ %s' % e
 		# get方法
@@ -468,4 +476,13 @@ def do_search(searchTxT):
 			new_result = {"name": result[0], "desc": result[1]}
 			dict_result.append(new_result)
 	return dict_result
+
+# 查看bug名字
+def get_bugList_name():
+	sql = f"select bugname from bug_bug where bugstatus<>'关闭'"
+	nameList = Mysql().sql_result(sql)
+	names = []
+	for name in nameList:
+		names.append(name[0])
+	return names
 

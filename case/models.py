@@ -19,6 +19,7 @@ class Apitest(models.Model):
 		verbose_name = '场景测试'
 		verbose_name_plural = '场景测试'
 
+
 	def __str__(self):
 		return self.apitestname
 
@@ -61,6 +62,7 @@ class SingeApi(models.Model):
 	class Meta:
 		verbose_name = '接口信息'
 		verbose_name_plural = '接口信息'
+
 
 	def __str__(self):
 		return self.apiname

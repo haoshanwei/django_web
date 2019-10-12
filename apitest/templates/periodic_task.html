@@ -32,9 +32,9 @@
                         <td><a style='color:green'>每{{ periodic.period }} {{ periodic.every }}次</a></td>
                         <td>{{ task.date_changed }}</td>
                         <td>{{ task.enabled }}</td>
-                        <td>{% if task.task == "apitest.apitasks.api_test" %}
+                        <td>{% if task.task == "apitest.tasks.api_test" %}
                             <a href="../task_apis" target="mainFrame">运行</a>
-                        {% elif task.task == "apitest.apitasks.scence_test"  %}
+                        {% elif task.task == "apitest.tasks.scence_test"  %}
                             <a href="../task_apisteps" target="mainFrame">运行</a>
                         {% else %}
                         {% endif %}

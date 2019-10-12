@@ -13,7 +13,7 @@ def api(request):
 	username = request.session.get('user', '')
 	api_list = SingeApi.objects.all()
 	api_count = SingeApi.objects.all().count()
-	paginator = Paginator(api_list, 10)  # 生成paginator对象,设置每页显示8条记录
+	paginator = Paginator(api_list, 10)  # 生成paginator对象,设置每页显示10条记录
 	page = request.GET.get('page', 1)  # 获取当前的页码数,默认为第1页
 	currentPage = int(page)  # 把获取的当前页码数转换成整数类型
 	try:

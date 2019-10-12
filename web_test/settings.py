@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-CELERYD_MAX_TASKS_PER_CHILD = 3 #  每个worker最多执行3个任务就会被销毁，可防止内存泄露
+CELERYD_MAX_TASKS_PER_CHILD = 10 #  每个worker最多执行3个任务就会被销毁，可防止内存泄露
 
 CELERY_ENABLE_UTC = True
 

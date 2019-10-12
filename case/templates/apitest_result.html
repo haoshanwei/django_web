@@ -32,7 +32,6 @@
                     <td valign="top" style="word-wrap:break-word;word-break:break-all;" width="500px">
                            {% for step in steps %}
                                {% if step.Apitest_id == api.id %}
-
                                 <br>{{ step.apistep }}&nbsp;&nbsp;调用接口：{{ step.apiurl }}&nbsp;&nbsp;请求方法：
                                 {{ step.apimethod }}&nbsp;&nbsp;请求参数: {{ step.apiparamvalue }}
                                {% endif %}
