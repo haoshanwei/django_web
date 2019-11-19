@@ -88,7 +88,7 @@ DATABASES = {
 		'NAME': 'web',
 		'USER': 'root',
 		'PASSWORD': 'root',
-		'HOST': '192.168.10.37',
+		'HOST': '192.168.10.42',
 		'PORT': '3306',
 	}
 }
@@ -140,6 +140,7 @@ CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 CELERY_ALWAYS_EAGER = True
 
-BROKER_URL = 'redis://192.168.10.37:6379/1'
+BROKER_URL = 'redis://192.168.10.42:6379/1'
 
 BROKER_TRANSPORT = 'redis'
+

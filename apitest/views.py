@@ -131,7 +131,7 @@ def periodic_task(request):
 # 运行单接口测试
 def do_single(request):
 	username = request.session.get('user', '')
-	caseId = apitestId = request.GET.get('api.id', None)
+	caseId = request.GET.get('api.id', None)
 	single_api_test(caseId)
 	api = SingeApi.objects.get(id=caseId)
 	return render(request, 'api_result.html', {'username': username, "api": api})

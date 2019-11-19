@@ -35,7 +35,7 @@ class Apistep(models.Model):
 	apimethod = models.CharField(verbose_name='请求方法', choices=REQUEST_METHOD, default='get', max_length=200, null=True)  # 请求方法
 	apistatuscode = models.CharField('状态码', max_length=3)
 	apiresult = models.CharField('预期结果', max_length=5000, help_text="多个校验时使用分号隔开.如name==admin;price=1")  # 预期结果
-	apiresponse = models.CharField('响应结果', max_length=5000, null=True, blank=True)  # 响应结果
+	apiresponse = models.TextField('响应结果', max_length=5000, null=True, blank=True)  # 响应结果
 	apistatus = models.BooleanField('是否通过', null=True)  # 测试结果
 	create_time = models.DateField('创建时间', auto_now=True)  # 创建时间，自动获# 取当前时间
 
@@ -53,7 +53,7 @@ class SingeApi(models.Model):
 	apimethod = models.CharField(verbose_name='请求方法', choices=REQUEST_METHOD, default='post', max_length=200, null=True)  # 请求方法
 	apistatuscode = models.CharField('状态码', max_length=3)
 	apiresult = models.CharField('预期结果', max_length=5000, help_text="预期结果;多个校验时使用分号隔开.如name=admin;price=1")  # 预期结果
-	apiresponse = models.CharField('响应结果', max_length=5000, null=True, blank=True)  # 响应结果
+	apiresponse = models.TextField('响应结果', null=True, blank=True)  # 响应结果
 	apistatus = models.BooleanField('是否通过')  # 测试结果
 	create_time = models.DateField('创建时间', auto_now=True)  # 创建时间，自动获# 取当前时间
 	update_time = models.DateField('执行时间', auto_now=True)  # 更新时间，自动获# 取当前时间1

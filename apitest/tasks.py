@@ -39,8 +39,8 @@ def Doapi(case_list):
 	request_urls = []
 	responses = []
 	try:
-		host = 'select value from parameter_parameter where name="api_host"'
-		defult_headers = 'select value from parameter_parameter where name="default_header"'
+		host = 'select value from parameter_parameter where name="host"'
+		defult_headers = 'select value from parameter_parameter where name="headers"'
 		host = Mysql().reslut_replace(host)
 		defult_headers = Mysql().reslut_replace(defult_headers)
 	except:
@@ -79,7 +79,7 @@ def Doapi(case_list):
 			req = requests.get(case_url, params=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText) == "PASS":
 				res_flags.append('PASS')
 				caseWriteResult(case_id, responseText, responses_code, '1')
 			else:
@@ -90,7 +90,7 @@ def Doapi(case_list):
 			req = requests.post(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 				caseWriteResult(case_id, responseText, responses_code, '1')
 			else:
@@ -101,7 +101,7 @@ def Doapi(case_list):
 			req = requests.put(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 				caseWriteResult(case_id, responseText, responses_code, '1')
 			else:
@@ -112,7 +112,7 @@ def Doapi(case_list):
 			req = requests.delete(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 				caseWriteResult(case_id, responseText, responses_code, '1')
 			else:
@@ -123,7 +123,7 @@ def Doapi(case_list):
 			req = requests.patch(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 				caseWriteResult(case_id, responseText, responses_code, '1')
 			else:
@@ -170,23 +170,23 @@ def compare_result(dict_result, result_check):
 	:return:
 	"""
 	if result_check == None or result_check == "/":
-		return "PASS"
+		return True
 	else:
 		dict_result = str(dict_result)[1:-1].replace(':', '=').replace('= ', '=').replace("'",'').replace('"','')
 		result_list = str(result_check).split(';')
 		for result in result_list:
-			if result in dict_result:
-				pass
+			if result not in dict_result:
+				return False
+				break
 			else:
-				return '错误!返回参数和预期结果不一致' + result
-		return "PASS"
-
+				rs.append(True)
+		return True
 
 def compare_code(code, check_code):
 	if str(code) == str(check_code):
-		return "PASS"
+		return True
 	else:
-		return "FAILE"
+		return False
 
 
 
@@ -253,8 +253,8 @@ def DoScneceapi(case_list):
 	request_urls = []
 	responses = []
 	try:
-		host = 'select value from parameter_parameter where name="api_host"'
-		defult_headers = 'select value from parameter_parameter where name="default_header"'
+		host = 'select value from parameter_parameter where name="host"'
+		defult_headers = 'select value from parameter_parameter where name="headers"'
 		host = Mysql().reslut_replace(host)
 		defult_headers = Mysql().reslut_replace(defult_headers)
 	except:
@@ -295,7 +295,7 @@ def DoScneceapi(case_list):
 			req = requests.get(case_url, params=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 			else:
 				res_flags.append('FAILE')
@@ -310,7 +310,7 @@ def DoScneceapi(case_list):
 			req = requests.post(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 			else:
 				res_flags.append('FAILE')
@@ -325,7 +325,7 @@ def DoScneceapi(case_list):
 			req = requests.put(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 			else:
 				res_flags.append('FAILE')
@@ -340,7 +340,7 @@ def DoScneceapi(case_list):
 			req = requests.delete(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 			else:
 				res_flags.append('FAILE')
@@ -355,7 +355,7 @@ def DoScneceapi(case_list):
 			req = requests.patch(case_url, data=case_param, headers=case_headers)
 			responses_code = req.status_code
 			responseText = req.text
-			if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+			if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 				res_flags.append('PASS')
 			else:
 				res_flags.append('FAILE')
@@ -373,8 +373,8 @@ def single_api_test(caseId):
 	request_urls = []
 	responses = []
 	try:
-		host = 'select value from parameter_parameter where name="api_host"'
-		defult_headers = 'select value from parameter_parameter where name="default_header"'
+		host = 'select value from parameter_parameter where name="host"'
+		defult_headers = 'select value from parameter_parameter where name="headers"'
 		host = Mysql().reslut_replace(host)
 		defult_headers = Mysql().reslut_replace(defult_headers)
 	except:
@@ -415,7 +415,7 @@ def single_api_test(caseId):
 		req = requests.get(case_url, params=case_param, headers=case_headers)
 		responses_code = req.status_code
 		responseText = req.text
-		if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+		if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 			caseWriteResult(case_id, responseText, responses_code, '1')
 		else:
 			caseWriteResult(case_id, responseText, responses_code, '0')
@@ -424,8 +424,7 @@ def single_api_test(caseId):
 		req = requests.post(case_url, data=case_param, headers=case_headers)
 		responses_code = req.status_code
 		responseText = req.text
-
-		if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+		if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 			caseWriteResult(case_id, responseText, responses_code, '1')
 		else:
 			caseWriteResult(case_id, responseText, responses_code, '0')
@@ -434,7 +433,7 @@ def single_api_test(caseId):
 		req = requests.put(case_url, data=case_param, headers=case_headers)
 		responses_code = req.status_code
 		responseText = req.text
-		if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+		if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 			caseWriteResult(case_id, responseText, responses_code, '1')
 		else:
 			caseWriteResult(case_id, responseText, responses_code, '0')
@@ -443,7 +442,7 @@ def single_api_test(caseId):
 		req = requests.delete(case_url, data=case_param, headers=case_headers)
 		responses_code = req.status_code
 		responseText = req.text
-		if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+		if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 			caseWriteResult(case_id, responseText, responses_code, '1')
 		else:
 			caseWriteResult(case_id, responseText, responses_code, '0')
@@ -452,12 +451,11 @@ def single_api_test(caseId):
 		req = requests.patch(case_url, data=case_param, headers=case_headers)
 		responses_code = req.status_code
 		responseText = req.text
-		if compare_code(responses_code, case_code) == "PASS" and compare_result(responseText, res_check) == "PASS":
+		if compare_code(responses_code, case_code) and compare_result(responseText, res_check):
 			caseWriteResult(case_id, responseText, responses_code, '1')
 		else:
 			caseWriteResult(case_id, responseText, responses_code, '0')
 			writeBug(case_id, case_name, case_url, case_param, responses_code, responseText, res_check, ItemAppId)
-
 
 # 搜索接口
 def do_search(searchTxT):
