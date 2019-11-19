@@ -7,31 +7,30 @@
 
 {% csrf_token %}
 {% block content %}
-
-    <!-- 产品列表-->
-        <div class="row" style="margin-left: 0px; width:100%;">
-            <div class="col-md-11">
-                <table class="table table-striped" rules="">
+<style type="text/css">.table {table-layout:fixed;word-break:break-all;}</style>
+    <!-- bug列表-->
+        <div class="col-md-12" style="margin-left: 0px; width:100%;">
+            <div class="row">
+                <table class="table " rules="">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>BUG名称</th>
-                        <th>复现步骤</th>
+                        <th >BUG名称</th>
+                        <th  width="60%">复现步骤</th>
                         <th>解决状态</th>
                         <th>严重程度</th>
                         <th>产品|板块</th>
                         <th>创建人</th>
                         <th>分配给</th>
                         <th>创建时间</th>
-
                     </tr>
                     </thead>
                     <tbody>
                     {% for bug in bugs %}
                         <tr style="background-color: #eee">
-                            <td>{{ bug.id }}</td>
+                            <td >{{ bug.id }}</td>
                             <td>{{ bug.bugname }}</td>
-                            <td><br>{{ bug.bugdesc }}</br><br>{{ bug.bugimgFile }}</br></td>
+                            <td><p>{{ bug.bugdesc }}</p><p>{{ bug.bugimgFile }}</p></td>
                             <td>{{ bug.bugstatus }}</td>
                             <td>{{ bug.buglevel }}</td>
                             <td>{{ bug.ItemsApplication.Items.name }}|{{ bug.ItemsApplication.name }}</td>

@@ -13,7 +13,7 @@ def api(request):
 	username = request.session.get('user', '')
 	api_list = SingeApi.objects.all()
 	api_count = SingeApi.objects.all().count()
-	paginator = Paginator(api_list, 10)  # 生成paginator对象,设置每页显示10条记录
+	paginator = Paginator(api_list, 20)  # 生成paginator对象,设置每页显示20条记录
 	page = request.GET.get('page', 1)  # 获取当前的页码数,默认为第1页
 	currentPage = int(page)  # 把获取的当前页码数转换成整数类型
 	try:
@@ -32,7 +32,7 @@ def scence_api(request):
 	apitest_list = Apitest.objects.all()
 	steps_list = Apistep.objects.all()
 	apitest_count = Apitest.objects.all().count()  # 统计产品数
-	paginator = Paginator(apitest_list, 10)  # 生成paginator对象,设置每页显示10条记录
+	paginator = Paginator(apitest_list, 15)  # 生成paginator对象,设置每页显示10条记录
 	page = request.GET.get('page', 1)  # 获取当前的页码数,默认为第1页
 	currentPage = int(page)  # 把获取的当前页码数转换成整数类型
 	try:

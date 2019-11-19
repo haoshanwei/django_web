@@ -56,7 +56,7 @@ class SingeApi(models.Model):
 	apiresponse = models.TextField('响应结果', null=True, blank=True)  # 响应结果
 	apistatus = models.BooleanField('是否通过')  # 测试结果
 	create_time = models.DateField('创建时间', auto_now=True)  # 创建时间，自动获# 取当前时间
-	update_time = models.DateField('执行时间', auto_now=True)  # 更新时间，自动获# 取当前时间1
+	update_time = models.DateField('执行时间', auto_now=True)  # 更新时间，自动获# 取当前时间
 
 
 	class Meta:

@@ -7,34 +7,33 @@
 
 
 {% block content %}
-
+<style type="text/css">.table {table-layout:fixed;word-break:break-all;}</style>
     <!-- 测试步骤管理列表-->
     <div class="row" style="padding-top: 0px; width: 100%">
         <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
-
                 <tr>
-                    <th>所属场景</th>
-                    <th>步聚</th>
-                    <th>URL地址</th>
+                    <th width="8%">所属场景</th>
+                    <th width="10%">步聚</th>
+                    <th width="10%">URL地址</th>
                     <th>参数值</th>
-                    <th>方法</th>
+                    <th width="5%">方法</th>
                     <th>校验</th>
                     <th>结果</th>
-                    <th>时间</th>
+                    <th width="8%">时间</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for apistep in apisteps %}
                     <tr>
                         {% if apistep.Apitest.id == apitest.id %}
-                            <td>case_{{ apistep.Apitest.id }}_{{ apistep.Apitest.apitestname }}</td>
-                            <td>{{ apistep.apistep }}:{{ apistep.apiname }}</td>
-                            <td>{{ apistep.apiurl }}</td>
-                            <td>{{ apistep.apiparamvalue }}</td>
+                            <td><p>case_{{ apistep.Apitest.id }}_{{ apistep.Apitest.apitestname }}</p></td>
+                            <td><p>{{ apistep.apistep }}:{{ apistep.apiname }}</p></td>
+                            <td><p>{{ apistep.apiurl }}</p></td>
+                            <td><p>{{ apistep.apiparamvalue }}</p></td>
                             <td>{{ apistep.apimethod }}</td>
-                            <td>{{ apistep.apiresult }}</td>
+                            <td><p>{{ apistep.apiresult }}</p></td>
                             <td>{% if apistep.apistatus == 1 %}
                                 <a style='color:green'>{{ apistep.apistatus }}</a>
                             {% else %}

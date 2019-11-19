@@ -43,3 +43,10 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}

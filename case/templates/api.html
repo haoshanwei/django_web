@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
-
+<style type="text/css">.table {table-layout:fixed;word-break:break-all;}</style>
 {% block content %}
     <!-- 接口列表-->
     <div class="row" style="padding-left: 20px; width:100%;">
-        <div class="col-md-11">
+        <div class="col-md-12">
             {% if apicount == 0 %}
                 <div class="container">
                 <p>&nbsp;</p>

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% block title %}BUG的一生{% endblock %}
+{% block title %}接口测试任务报告{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
-
+<style type="text/css">.table {table-layout:fixed;word-break:break-all;}</style>
 {% block content %}
     <div class="row" style="padding-top: 55px;padding-left: 20px; width:100%;">
-        <div class="col-md-11">
-            <table class="table table-striped" ; rules="">
+        <div class="col-md-12">
+            <table class="table table-striped" ; rules=""; align="center">
                 <div style="position:absolute; right:10px; width:10px; ">
                     <tr>
                         <th></th>
@@ -67,6 +67,7 @@
                 </div>
             </table>
             <!-- 单一接口测试用例-->
+            <div class="col-md-12">
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -79,7 +80,7 @@
                     <th>参数值</th>
                     <th>方法</th>
                     <th>预期</th>
-                    <th>实际结果</th>
+                    <th width="60%">实际结果</th>
                     <th>测试结果</th>
                     <th>执行时间</th>
                 </tr>
@@ -93,7 +94,7 @@
                         <td>{{ api.apiurl }}</td>
                         <td>{{ api.apiparamvalue }}</td>
                         <td>{{ api.apimethod }}</td>
-                        <td>{{ api.apiresult }}</td>
+                        <td><p>{{ api.apiresult }}</p></td>
                         <td>{{ api.apiresponse }}</td>
                         <td>{% if api.apistatus == 1 %}
                             <a style='color:green'>{{ api.apistatus }}</a>
@@ -107,6 +108,7 @@
                 {% endfor %}
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 {% endblock %}

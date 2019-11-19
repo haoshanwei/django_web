@@ -10,7 +10,7 @@
 
     <!-- 产品列表-->
         <div class="row" style="margin-left: 0px; width:100%;">
-            <div class="col-md-11">
+            <div class="col-md-12">
                 <table class="table table-striped" rules="">
                     <thead>
                     <tr>
@@ -18,7 +18,7 @@
                         <th>功能板块</th>
                         <th>所属产品</th>
                         <th>板块描述</th>
-                        <th>板块测试负责人</th>
+                        <th>测试负责人</th>
                         <th>开始时间</th>
                         <th>结束时间</th>
                     </tr>
@@ -30,7 +30,7 @@
                             <td>{{ app.id }}</td>
                             <td>{{ app.name }}</td>
                             <td>{{ item.name }}</td>
-                            <td>{{ app.desc }}</td>
+                            <td><p>{{ app.desc }}</p></td>
                             <td>{{ app.member }}</td>
                             <td>{{ item.startTime }}</td>
                             <td>{{ item.endTime }}</td>

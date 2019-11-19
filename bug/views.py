@@ -9,7 +9,7 @@ def bug(request):
 	username = request.session.get('user', '')
 	buglist = Bug.objects.all()
 	bug_count = Bug.objects.all().count()
-	paginator = Paginator(buglist, 10)  # 生成paginator对象,设置每页显示8条记录
+	paginator = Paginator(buglist, 10)  # 生成paginator对象,设置每页显示10条记录
 	page = request.GET.get('page', 1)  # 获取当前的页码数,默认为第1页
 	currentPage = int(page)  # 把获取的当前页码数转换成整数类型
 	try:

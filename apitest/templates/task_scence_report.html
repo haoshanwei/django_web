@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="row" style="padding-top: 55px;padding-left: 20px; width:100%;">
-        <div class="col-md-11">
+        <div class="col-md-12">
             <table class="table table-striped"; rules="">
                 <div style="position:absolute; right:10px; width:10px; ">
                     <tr>
@@ -70,14 +70,13 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>测试列表</th>
-                    <td>
+                    <th width="10%">测试列表</th>
                 <tr>
-                    <th>ID</th>
-                    <th>用例名称</th>
-                    <th>用例描述</th>
+                    <th width="3%">ID</th>
+                    <th >用例名称</th>
+                    <th >用例描述</th>
                     <th>测试结果</th>
-                    <th>失败原因</th>
+                    <th width="40%">失败原因</th>
                     <th>执行时间</th>
                 </tr>
                 </thead>
@@ -85,15 +84,15 @@
                 {% for api in apis %}
                     <tr>
                             <td>{{ api.id }}</td>
-                            <td>{{ api.apitestname }}</td>
-                            <td>{{ api.apitestdesc }}</td>
+                            <td><p>{{ api.apitestname }}</p></td>
+                            <td><p>{{ api.apitestdesc }}</p></td>
                             <td>{% if api.apitestresult == 1 %}
                                 <a style='color:green'>{{ api.apitestresult }}</a>
                             {% else %}
                                 <a style='color:red'>{{ api.apitestresult }}</a>
                             {% endif %}
                             </td>
-                            <td>{{ api.failreason }}</td>
+                            <td><p>{{ api.failreason }}</p></td>
                             <td>{{ api.update_time }}</td>
                     </tr>
                 {% endfor %}

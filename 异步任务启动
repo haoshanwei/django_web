@@ -1,6 +1,6 @@
 如何启动：
 1、先启动redis服务器
-2、启动worker  python manage.py celery worker - l info
+2、启动worker  python manage.py celery worker -l info
 3、启动分配机制 beat celery -A project beat -l info
 
 如何配置：

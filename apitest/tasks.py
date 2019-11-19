@@ -231,9 +231,9 @@ def writeScenceBug(apitest_name, api_name, api_url, request, code, response, res
 	now = time.strftime("%Y-%m-%d %H:%M:%S")
 	bugname =  '场景测试:  %s_出错了' % apitest_name
 	names = get_bugList_name()
-	bugdetail = '[场景测试]:' + apitest_name + '\n' +\
-				'[错误接口名称]:' + api_name + '\n' +\
-				'[接口地址]:' + api_url + '\t' +\
+	bugdetail = '[场景测试]<br/>' + apitest_name  + '<br/>' +\
+				'[错误接口名称]<br/>:' + api_name  + '<br/>'+\
+				'[接口地址]<br/>' + api_url + '<br/>' +\
 				'[请求数据]<br />' + str(request) + '<br/>' +\
 				'[响应状态码]<br />' + str(code) + '<br/>' +\
 				'[预期结果]<br/>' + res_check + '<br/>' +\
