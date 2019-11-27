@@ -29,7 +29,7 @@ SECRET_KEY = '*a2x3q7-mke@*ib1t^2i!m^=pjaq&3-b(lwf)a41x5ur2szaw3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", ]
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 	'bug',
 	'parameter',
 	'djcelery',
+	'function',
 ]
 
 MIDDLEWARE = [

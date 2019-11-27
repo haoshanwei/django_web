@@ -20,6 +20,7 @@ from items import views as itview
 from case import views as cview
 from bug import views as bview
 from django.conf.urls import url, include, re_path
+from function import views as fview
 
 
 urlpatterns = [
@@ -47,7 +48,12 @@ urlpatterns = [
     path('apistep_manage/', cview.apistep_manage, name='apistep_manage'),
     path('do_apitest/', views.do_apitest, name='do_apitest'),
     path('do_single/', views.do_single, name='do_single'),
-
-
+    path('function/', fview.function),
+    path('add_bid_product/', fview.Add_Bid_product, name='add_bid_product'),
+    path('add_delay_product/', fview.Add_Delay_product, name='add_delay_product'),
+    path('add_delay_auction/', fview.Add_Delay_Auction, name='add_delay_auction'),
+    path('add_bid_live_auction/', fview.Add_Bid_Live_Auction, name='add_bid_live_auction'),
+    path('add_image_auction/', fview.Add_Bid_ImageText_Auction, name='add_image_auction'),
+    path('add_sellLive_auction/', fview.Add_Seller_Live_Auction, name='add_sellLive_auction'),
 
 ]

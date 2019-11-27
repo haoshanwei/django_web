@@ -14,6 +14,10 @@ def forwards_func(apps, schema_editor):
           'Connection':'keep-alive',
           'Content-Type':'application/x-www-form-urlencoded',
           'clientType':'IOS'}""", name="headers"),
+        Parameter(value="dc_huangsonglin", name="web_admin"),
+        Parameter(value="Aa123456", name="web_admin_password"),
+        Parameter(value="http://train-h5.dcpai.cn", name="web_host_1"),
+        Parameter(value="http://testadmin.dcpai.cn", name="web_host_2")
     ])
 
 
@@ -26,6 +30,10 @@ def reverse_func(apps, schema_editor):
           'Connection':'keep-alive',
           'Content-Type':'application/x-www-form-urlencoded',
           'clientType':'IOS'}""").filter(name="headers").delete()
+    Parameter.objects.using(db_alias).filter(value="dc_huangsonglin").filter(name="web_admin").delete()
+    Parameter.objects.using(db_alias).filter(value="Aa123456").filter(name="web_admin_password").delete()
+    Parameter.objects.using(db_alias).filter(value="http://train-h5.dcpai.cn").filter(name="web_host_1").delete()
+    Parameter.objects.using(db_alias).filter(value="http://testadmin.dcpai.cn").filter(name="web_host_2").delete()
 
 
 class Migration(migrations.Migration):

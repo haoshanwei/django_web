@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}常用功能{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% csrf_token %}
+{% block content %}
+<style type="text/css">.table {
+    table-layout: fixed;
+    word-break: break-all;
+}</style>
+<!-- bug列表-->
+<div class="row" style="padding-top: 20px; padding-left: 20px; width:100%;">
+    <div class="col-md-12">
+        <table class="table table-striped " rules="">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>功能名称</th>
+                <th width="50%">功能描述</th>
+                <th>执行操作</th>
+                <th>功能删除</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for func in functions %}
+            <tr style="background-color: #eee">
+                <td>{{ func.id }}</td>
+                <td>{{ func.name }}</td>
+                <td>{{ func.desc }}</td>
+                {% if func.name == "创建轰啪拍品" %}
+                    <td><a href="{% url "add_bid_product" %}" target="mainFrame">运行</a></td>
+                {% elif func.name == "创建秒啪拍品" %}
+                <td><a href="{% url "add_delay_product" %}" target="mainFrame">运行</a></td>
+                {% elif func.name == "创建秒啪拍场" %}
+                <td><a href="{% url "add_delay_auction" %}" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建轰啪直播拍场" %}
+                <td><a href="{% url "add_bid_live_auction" %}" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建轰啪图文拍场" %}
+                <td><a href="{% url "add_image_auction" %}" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建轰啪卖家直播拍场" %}
+                <td><a href="{% url "add_sellLive_auction" %}" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建商城拍品-单品" %}
+                <td><a href="#" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建商城拍品-多品" %}
+                <td><a href="#" target="mainFrame">运行</a></td>
+                    {% elif func.name == "创建商城拍品-待价估询" %}
+                <td><a href="#" target="mainFrame">运行</a></td>
+                {% endif %}
+                <td>
+                    <a style='color:lightblue' class="related-widget-wrapper-link add-related" id="add_id_Apitest"
+                       href="../admin/function/function/{{ func.id }}/delete/">
+                        <img src="/static/admin/img/icon-deletelink.svg"/></a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

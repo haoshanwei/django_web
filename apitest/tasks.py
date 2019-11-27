@@ -157,7 +157,7 @@ def writeBug(bug_id, api_name, api_url, request, code, response, res_check, Item
 		  "bugstatus, ItemsApplication_id, bugrepair)  " \
 		  "VALUES ('%s', '%s', '3', 'admin', '%s', '激活', '%s', 'admin');" % \
 		  (bugname, pymysql.escape_string(bugdetail), pymysql.escape_string(now), ItemAppId)
-	if api_name in names:
+	if bugname in names:
 		pass
 	else:
 		Mysql().updata(sql)
